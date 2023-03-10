@@ -1,0 +1,52 @@
+<p>register works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Register</h1>
+                    <h6 style="font-size: medium;">Please enter your details!!</h6>
+                </div>
+               <form> 
+                    <form [formGroup]="registerForm" (ngSubmit)="Registernow()">
+                        <!-- Name input -->
+                        <div class="form-outline mb-4">
+                          <label class="exampleInputpassword1" for="form1Example1">Full Name</label><br>
+                            <input formControlName="fullname" type="text" id="form1Example1" class="form-control" />        
+                            <br>
+                            <span class="text-danger" *ngIf="registerForm.controls['fullname'].dirty && registerForm.hasError('required','fullname')">*Full Name is required</span>
+                          </div>
+                          <!-- Mobile no ip -->
+                          <div class="form-outline mb-4">
+                            <label class="exampleinputpassword1" for="form1Example1">Mobile Number</label><br>
+                            <input  formControlName="mobile" type="number" id="form1Example1" class="form-control" />                         
+                            <br>
+                            <span class="text-danger" *ngIf="registerForm.controls['mobile'].dirty && registerForm.hasError('required','mobile')">*Mobile no is required</span>
+                          </div>
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                          <label class="exampleinputpassword1" for="form1Example1">Email address</label><br>
+                          <input  formControlName="email" type="email" id="form1Example1" class="form-control" />
+                          <br>
+                          <span class="text-danger" *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('required','email')">*Email Id is required</span>
+                        </div>
+                      
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                          <label class="exampleinputpassword1" for="form1Example2">Password</label> <br>
+                          <input  formControlName="password" type="password" id="form1Example2" class="form-control" />
+                          <br>
+                          <span class="text-danger" *ngIf="registerForm.controls['password'].dirty && registerForm.hasError('required','password')">*Password is required</span>
+                        </div>
+                      
+                        <!-- 2 column grid layout for inline styling -->
+                      
+                        <!-- Submit button -->
+                        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary btn-block">Register</button> 
+                      </form>
+                      <a style = "color: blue; margin-top:10px" routerLink="/login">Already registered ? Click to login</a>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
