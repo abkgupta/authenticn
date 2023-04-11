@@ -33,6 +33,9 @@ export class RegisterComponent {
           this.http.post<any>("http://localhost:3000/RegisterUsers", this.registerForm.value)
             .subscribe(res => {
               alert('registered success')
+              // console.log(this.registerForm.value)
+              // localStorage.setItem("token","sdkknkvnkfvkvokdvndlkvmdk")
+              // this.registerForm.value.user
               this.registerForm.reset();            
               this.router.navigate(['register']);
             }, err => {

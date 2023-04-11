@@ -29,16 +29,18 @@ export class LoginComponent {
           // user.email!=null && user.password!=null || user.email!="" && user.password!=""
           alert("Login Successfull!!");
           localStorage.setItem('token', "gegegmk9f6f4r4");  // new line local storage
-           
+           console.warn(this.loginForm.value)
+          localStorage.setItem('token',"sdkknkvnkfvkvokdvndlkvmdk")
+          this.loginForm.value.email=="sdcvdvbd@hax.com"? localStorage.setItem('userType','eemployee') : localStorage.setItem('userType','admin')
           this.loginForm.reset();
           this.router.navigate(['home'])
         } else {
-          alert("user not found!");    
+          alert("user not found!");       
         }
       }, err => {
         alert("Something went wrong!!")
-      })
+      })        
   }
-
+  // json-server --watch db.json  to run db.json server
 
 }
