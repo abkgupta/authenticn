@@ -9,13 +9,21 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientJsonpModule } from '@angular/common/http';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { AdminComponent } from './admin/admin.component';
+import { AdminEditComponent } from './admin-edit/admin-edit.component';
+import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
+import { AdminManageComponent } from './admin-manage/admin-manage.component';
 // import {}
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent,
+    AdminEditComponent,
+    AdminDeleteComponent,
+    AdminManageComponent
   ],
   imports: [
     BrowserModule,

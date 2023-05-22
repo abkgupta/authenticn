@@ -373,6 +373,13 @@
       "email": "rahul@nimapinfotech.com",
       "password": "rgtg",
       "id": 61
+    },
+    {
+      "fullname": "Omkar jay ram",
+      "email": "adads@er.com",
+      "password": "1234589",
+      "mobile": 8574123,
+      "id": 62
     }
   ],
   "profile": {

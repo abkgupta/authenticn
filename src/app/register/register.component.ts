@@ -9,7 +9,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-
+  
+  // check if form is dirty 
+  isDirty = true;
   public registerForm !: FormGroup;
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private router: Router) { }
   ngOnInit(): void {

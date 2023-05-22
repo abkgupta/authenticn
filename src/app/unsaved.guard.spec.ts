@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PreferencesCheckGuard } from './preferences-check.guard';
+import { UnsavedGuard } from './unsaved.guard';
 
-describe('PreferencesCheckGuard', () => {
-  let guard: PreferencesCheckGuard;
+describe('UnsavedGuard', () => {
+  let guard: UnsavedGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    guard = TestBed.inject(PreferencesCheckGuard);
+    guard = TestBed.inject(UnsavedGuard);
   });
 
   it('should be created', () => {
