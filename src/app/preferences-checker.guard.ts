@@ -9,7 +9,7 @@ export class PreferencesCheckerGuard implements CanLoad {
   canLoad(
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      return true; 
-      // return false;
+      return true;          // it will load the module.
+      // return false;            // it will not load the module.
   }
 }
