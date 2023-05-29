@@ -13,6 +13,8 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
 import { AdminManageComponent } from './admin-manage/admin-manage.component';
+import { HeaderInterceptor } from './header.interceptor';
+import { LoggingInterceptor } from './logging.interceptor';
 // import {}
 @NgModule({
   declarations: [
@@ -34,11 +36,12 @@ import { AdminManageComponent } from './admin-manage/admin-manage.component';
     HttpClientJsonpModule,
     
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true
-  }],
+  providers: [
+    TokenInterceptorService,
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
+
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
