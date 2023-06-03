@@ -1,0 +1,21 @@
+<!-- <p>compo works!</p> -->
+<div class="container">
+ <h2>Load Interceptor </h2>
+ <table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let value of result"> 
+         <td>{{value.fullname}}</td>
+         <td>{{value.email}}</td>
+         <td>{{value.mobile}}</td>
+        </tr>
+    </tbody>
+
+ </table>
+</div>

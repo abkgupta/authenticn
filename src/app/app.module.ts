@@ -15,6 +15,9 @@ import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
 import { AdminManageComponent } from './admin-manage/admin-manage.component';
 import { HeaderInterceptor } from './header.interceptor';
 import { LoggingInterceptor } from './logging.interceptor';
+import { LoaderComponent } from './loader/loader.component';
+import { CompoComponent } from './compo/compo.component';
+import { CompsComponent } from './comps/comps.component';
 // import {}
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { LoggingInterceptor } from './logging.interceptor';
     AdminComponent,
     AdminEditComponent,
     AdminDeleteComponent,
-    AdminManageComponent
+    AdminManageComponent,
+    LoaderComponent,
+    CompoComponent,
+    CompsComponent
   ],
   imports: [
     BrowserModule,

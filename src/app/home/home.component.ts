@@ -11,7 +11,7 @@ export class HomeComponent {
   constructor(private router: Router) {}
 
   logout() {
-    localStorage.removeItem('token');
+    localStorage.removeItem('userType');
     this.router.navigate(['login'])
   }
 }

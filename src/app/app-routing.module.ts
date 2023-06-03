@@ -12,6 +12,8 @@ import { AdminManageComponent } from './admin-manage/admin-manage.component';
 import { AdminEditComponent } from './admin-edit/admin-edit.component';
 import { AdminDeleteComponent } from './admin-delete/admin-delete.component';
 import { AdminAccessGuard } from './admin-access.guard';
+import { LoaderComponent } from './loader/loader.component';
+import { CompoComponent } from './compo/compo.component';
 // import { AuthService } from './shared/auth.service';
 
 const routes: Routes = [
@@ -21,23 +23,27 @@ const routes: Routes = [
   { path: 'register', 
   component: RegisterComponent,
    canDeactivate: [UnsavedGuard] },
-  // {path:'home',component:HomeComponent}
-  // {
-  //     component: LoginComponent,
-  //     path:'login'
-  //   },
-  //   {
-  //     component: RegisterComponent,
-  //     path:'register'
-  //   },
-  // {
-  //   component: HomeComponent,
-  //   path:'home'
-  // }
+ 
   {
     path: 'home',
     component: HomeComponent,
     canActivate: [AuthGuard],
+   
+  },
+  {
+    path: 'loader',
+    component: LoaderComponent,
+    // canActivate: [AuthGuard],
+   
+  },
+  {
+    path: 'compo',
+    component: CompoComponent,
+   
+  },
+  {
+    path: 'comps',
+    component: CompoComponent,
    
   },
   {

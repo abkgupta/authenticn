@@ -28,12 +28,16 @@ export class LoginComponent {
         if (user) {
           // user.email!=null && user.password!=null || user.email!="" && user.password!=""
           alert("Login Successfull!!");
-          localStorage.setItem('token', "gegegmk9f6f4r4");  // new line local storage
+          // console.log("window location ", window.location)
+          // localStorage.setItem('token', "gegegmk9f6f4r4");  // new line local storage
            console.warn(this.loginForm.value)
           // localStorage.setItem('token',"sdkknkvnkfvkvokdvndlkvmdk")
-          this.loginForm.value.email=="sdcvdvbd@hax.com"? localStorage.setItem('userType','eemployee') : localStorage.setItem('userType','admin')
+          this.loginForm.value.email=="sachind@ho.com"? localStorage.setItem('userType','admin') : localStorage.setItem('userType','employee')
           this.loginForm.reset();
+          if(localStorage.getItem('userType')== 'admin')
           this.router.navigate(['home'])
+          else
+          alert("You are not allowed to acces this page Only admin are allowed")
         } else {
           alert("user not found!");       
         }

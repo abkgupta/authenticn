@@ -7,7 +7,13 @@ export class AuthService {
 
   constructor() { }
   IsloggedIn(){
-    return !!localStorage.getItem('token');
+    // console.log(localStorage.getItem('token'))
+    console.log(localStorage.getItem('userType'))
+    if(localStorage.getItem('userType') == 'admin')
+    return true;
+    else
+    return false;
+    //return !!localStorage.getItem('token');
   }
 
   getToken(){

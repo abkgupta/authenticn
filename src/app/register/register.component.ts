@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  
+   apiUrls = environment.apiUrl
   // check if form is dirty 
   isDirty = true;
   public registerForm !: FormGroup;
@@ -24,10 +26,14 @@ export class RegisterComponent {
   }
   Registernow() {
     let isUserExist: boolean = false;
-    this.http.get<any>(`http://localhost:3000/RegisterUsers?fullname=${this.registerForm.value.fullname}`).subscribe(fullNameRes => {
+    this.http.get<any>(this.apiUrls+`/RegisterUsers?fullname=${this.registerForm.value.fullname}`).subscribe(fullNameRes => {
       this.http.get<any>(`http://localhost:3000/RegisterUsers?email=${this.registerForm.value.email}`).subscribe(emailRes => {
         this.http.get<any>(`http://localhost:3000/RegisterUsers?mobile=${this.registerForm.value.mobile}`).subscribe(mobileRes => {
           isUserExist = fullNameRes.length > 0 || emailRes.length > 0 || mobileRes.length > 0 ? true : false
+         // Urlsearchparams
+          console.log("window location ", window.location)
+          // const myKeysValues = window.location.search
+          // console.log("Keys and values ", myKeysValues)
           if (isUserExist) {
             alert("User Already exist!"); 
             return;
