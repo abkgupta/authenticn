@@ -26,13 +26,17 @@ export class HeaderInterceptor implements HttpInterceptor {
   //   return next.handle(req);
   // }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-   
+    this.ds.loaderb.next(true);
      return next.handle(req).pipe(
       tap(event => {
-        this.ds.loaderb.next(true);
+        setTimeout(() => {
+          this.ds.loaderb.next(false);
+        }, 3000);
+        
+        console.log(event)
         if(event.type == HttpEventType.Response) {
-          if(event.status == 200) {
-            this.ds.loaderb.next(false);
+          if(event.status == 200 || event.status== 401) {
+            
           }
         }
       })

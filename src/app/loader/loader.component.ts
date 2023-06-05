@@ -12,7 +12,8 @@ export class LoaderComponent {
  constructor(private loadservice: LoadserviceService) {}
  
  ngOnInit() {
-   this.loadservice.getPosts().subscribe(res =>{
+   this.loadservice.loaderb.subscribe((res:any) =>{
+    console.log(res)
     this.loaderb = res
    })
  }
